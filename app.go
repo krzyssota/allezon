@@ -7,8 +7,7 @@ import (
 
 func debug(w http.ResponseWriter, req *http.Request) {
 
-	fmt.Println("server: req", req, "\nheader", req.Header, "\nbody", req.Body)
-	fmt.Println("server: hello handler started")
+	//fmt.Println("server: req", req, "\nheader", req.Header, "\nbody", req.Body)
 	defer fmt.Println("server: hello handler ended")
 	fmt.Fprintf(w, "%s", req.Body)
 }
