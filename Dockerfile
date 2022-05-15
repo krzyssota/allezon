@@ -14,4 +14,4 @@ RUN go build -o allezon_server
 
 EXPOSE 8090
 
-CMD [ "/allezon_server" ]
+CMD [ "./allezon_server" ]
