@@ -16,11 +16,11 @@ func debug(w http.ResponseWriter, req *http.Request) {
 	}
 	counter++*/
 	//if _, err := fmt.Fprintf(w, "%s", req.Body); err != nil {
-	defer func(w io.Writer, format string, a ...any) {
+	defer func(w io.Writer, format string, a string) {
 		if _, err := fmt.Fprintf(w, format, a); err != nil {
 			fmt.Println("sending 'hej' error", err)
 		}
-	}(w, "hej")
+	}(w, "%s", "hej")
 }
 
 func main() {
