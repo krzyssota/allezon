@@ -10,6 +10,7 @@ RUN go mod download
 
 COPY *.go ./
 
+RUN go get -u github.com/gin-gonic/gin
 RUN go build -o allezon_server
 
 EXPOSE 8090

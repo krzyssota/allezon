@@ -15,7 +15,7 @@ func main() {
 	http.HandleFunc("/", handle)
 	log.Fatal(http.ListenAndServe(":8090", nil))*/
 	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
+	r.POST("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "pong",
 		})
