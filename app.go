@@ -1,6 +1,8 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+)
 
 var counter int = 20
 
@@ -17,6 +19,14 @@ func main() {
 	r := gin.Default()
 	r.POST("/user_tags", func(c *gin.Context) {
 		c.JSON(204, gin.H{})
+	})
+	// POST /user_profiles/{cookie}?time_range=<time_range>?limit=<limit>
+	r.POST("/user_profiles/:cookie", func(c *gin.Context) {
+
+		//time_range := c.Query("time_range")
+		//limit := c.Query("limit")
+		c.JSON(200, c.Request.Body)
+
 	})
 	r.Run(":8090") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
