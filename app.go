@@ -15,10 +15,8 @@ func main() {
 	http.HandleFunc("/", handle)
 	log.Fatal(http.ListenAndServe(":8090", nil))*/
 	r := gin.Default()
-	r.POST("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
+	r.POST("/user_tags", func(c *gin.Context) {
+		c.JSON(204, gin.H{})
 	})
 	r.Run(":8090") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
